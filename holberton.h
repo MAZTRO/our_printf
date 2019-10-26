@@ -3,6 +3,7 @@
 #include <unistd.h>
 #include <limits.h>
 #include <stdio.h>
+#include <stdarg.h>
 
 /**
  * _putchar - writes the character c to stdout
