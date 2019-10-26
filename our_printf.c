@@ -6,7 +6,7 @@
  * Return: Always 0 if the functions works.
  */
 
-char our_switch()
+void question()
 {
 
 }
@@ -19,8 +19,11 @@ char our_switch()
 
 int _printf(const char *format, ...)
 {
-	int count = 0; /* Counter of FORMAT */
-	int inter_count = 0; /* Counter that get the position of FORMAT after find a % symbol. */
+	int count = 0;
+	/* Counter of FORMAT */
+	int inter_count = 0;
+	/* Counter that get the position of
+	FORMAT after find a % symbol. */
 
 	va_list our_list;
 
@@ -31,15 +34,22 @@ int _printf(const char *format, ...)
 		while (format[count] != '%')
 		{
 			_putchar(format[count]);
-			*format++;
+			count++;
 		}
 
 		inter_count = count + 1;
 
-		if (format[inter_count] == '%')
-		{
-			_our_switch();
-		}
+		char *argument_string = NULL;
+		char argument_char = 0;
+
+		argument_string = va_arg(our_list, char*);
+		switch_char(argument_string);
+
+		argument_char = va_arg(our_list, char);
+
+			switch_numbers();
+			switch_rare_case();
+			switch_unknown();
 	}
 
 	va_end(our_list);
