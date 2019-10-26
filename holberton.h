@@ -17,7 +17,8 @@ int _putchar(char c)
 }
 
 int _printf(const char *format, ...);
-
+char switch_char(void *argument_input);
+void question(char char_type, void *argument_input);
 
 
 
