@@ -9,13 +9,15 @@
  * On error, -1 is returned, and errno is set appropriately.
  */
 
-char switch_char(*argument_input)
+void switch_char(void *argument_input)
 {
 	int i = 0;
 	while (argument_input)
 	{
-		_putchar(argument_input[i]);
+		_putchar(((char*)argument_input)[i]);
+		i++;
 	}
+}
 /* int switch_numbers()
 
 int switch_rare_case()
