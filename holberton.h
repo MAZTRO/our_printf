@@ -1,6 +1,7 @@
 #ifndef HOLBERTON_H
 #define HOLBERTON_H
 #include <unistd.h>
+#include <stdarg.h>
 
 /**
  * _putchar - writes the character c to stdout
