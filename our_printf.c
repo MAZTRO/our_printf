@@ -12,7 +12,7 @@ void question(char ch_type, void *argument_input)
 	{
 		switch_char(argument_input);
 	}
-	else if (ch_type == 'i' || ch_type == 'd' || ch_type == 'u')
+	/*else if (ch_type == 'i' || ch_type == 'd' || ch_type == 'u')
 	{
 		switch_numbers(argument_input);
 	}
@@ -24,7 +24,7 @@ void question(char ch_type, void *argument_input)
 	else
 	{
 		switch_unknown(argument_input);
-	}
+	}*/
 }
 
 /**
