@@ -15,10 +15,5 @@
 
 int _putchar(char c);
 int _printf(const char *format, ...);
-void switch_char(void *argument_input);
-//int switch_numbers(void *argument_input);
-//void switch_rare_case(void *argument_input);
-//void switch_unknown(void *argument_input);
-void question(char char_type, void *argument_input);
 
 #endif

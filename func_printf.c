@@ -1,5 +1,3 @@
-#include <limits.h>
-#include <stdio.h>
 #include "holberton.h"
 /**
  * switch_char - writes the character c to stdout
