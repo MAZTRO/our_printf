@@ -35,13 +35,10 @@ void question(char ch_type, void *argument_input)
 
 int _printf(const char *format, ...)
 {
+	char ch_type;
+	void *argument = NULL;
 	int count = 0;
-	/* Counter of FORMAT */
 	int inter_count = 0;
-	/**
-	 * Counter that get the position of
-	 * FORMAT after find a % symbol.
-	 */
 
 	va_list our_list;
 
@@ -56,9 +53,6 @@ int _printf(const char *format, ...)
 		}
 
 		inter_count = count + 1;
-
-		char ch_type;
-		void *argument = NULL;
 
 		ch_type = format[inter_count];
 		argument = va_arg(our_list, void*);
