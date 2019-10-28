@@ -2,81 +2,91 @@
 /**
  * percent - writes the character c to stdout
  * @module: The character to print
- * @count: Lol
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
  */
 
-int percent(const char *module, int count)
+int percent(const char *module)
 {
-	int x = count, result;
-	int y = 0;
-	int z = 0;
+	//int y = 0;
+	//int z = 0;
+	int count = 0, count_aux = 0;
 
-	while (module[x] == '%')
+	module--;
+	while (*module == '%' || *module == 32)
 	{
-		x++;
+		if (*module == '%')
+		{
+			count++;
+		}
+		if (count == 2)
+		{
+			_our_write('%');
+			count_aux += 1;
+			count = 0;
+		}
+		module++;
+	}
+	if (count == 1)
+	{
+		return (count_aux);
 	}
 
-	result = x - count;
-	z = result % 2;
-
+	/*
+	z = count % 2;
 	if (z == 0)
 	{
-		while (y < (result / 2))
+		while (y < (count / 2))
 		{
 			_our_write('%');
 			y++;
 		}
+		return (y);
 	}
 	else
 	{
-		while (y < (result / 2))
+		while (y < (count / 2))
 		{
 			_our_write('%');
 			y++;
 		}
 		_our_write('%');
-	}
-	return (count + result - 1);
+		return (y + 1);
+
+	}*/
+	return (0);
 }
 
 /**
- * switch_task_0 - writes the character c to stdout
+ * case_c - writes the character c to stdout
  * @module: The character to print
  * @count: Lol
  * @arguments: Lol
  * Return: On success 1.
  */
 
-int switch_task_0(const char *module, int count, void *arguments)
+void case_c(char our_char)
 {
-	void *argument;
+	_our_write(our_char);
+}
+
+/**
+ * case_s - writes the character c to stdout
+ * @module: The character to print
+ * @count: Lol
+ * @arguments: Lol
+ * Return: On success 1.
+ */
+
+int case_s(void *arguments)
+{
 	int strcount;
-	int integers;
 
-	argument = arguments;
-
-	switch (module[count + 1])
+	for (strcount = 0; ((char *)arguments)[strcount] != '\0'; strcount++)
 	{
-	case 's':
-		for (strcount = 0; ((char *)argument)[strcount] != '\0'; strcount++)
-		{
-			_our_write(((char *)argument)[strcount]);
-		}
-		break;
-	case '%':
-		count = percent((char *)module, count);
-		break;
-	case 'd':
-		integers = *(int *)module;
-		_our_write(integers + '0');
-		break;
-
-	default:
-		break;
+		_our_write(((char *)arguments)[strcount]);
 	}
-	return (strcount - 1);
+	return (strcount++);
 }
 
 /**

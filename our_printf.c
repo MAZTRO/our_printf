@@ -11,33 +11,38 @@ int _printf(const char *format, ...)
 	void *argument = NULL;
 	int count = 0, count_total = 0;
 	char our_char;
-
 	va_list our_list;
 
 	va_start(our_list, format);
-
-	while (format[count] != '\0')
+	while (*format != '\0')
 	{
-		if (format[count] != '%')
+		if (*format != '%')
 		{
-			_our_write(format[count]);
+			_our_write(*format);
 		}
 		else
 		{
-			if (format[count + 1] == 'c')
+			format++;
+			switch (*format)
 			{
+			case 'c':
 				our_char = va_arg(our_list, int);
 				_our_write(our_char);
-				count++;
+				break;
+			case 's':
+				argument = va_arg(our_list, void*);
+				count = case_s(argument);
+				break;
+			case '%':
+				count = percent(format);
+				format += count;
+				break;
+			default:
+				break;
 			}
-			argument = va_arg(our_list, void*);
-			count_total = switch_task_0(format, count, argument);
-			count++;
 		}
-		argument = NULL;
-		count++;
+		format++;
 	}
-
 	va_end(our_list);
-	return ((count -1) + count_total);
+	return ((count - 1) + count_total);
 }
