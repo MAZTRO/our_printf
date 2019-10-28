@@ -33,17 +33,6 @@ int percent(const char *module)
 }
 
 /**
- * case_c - writes the character c to stdout
- * @our_char: The character to print
- * Return: On success 1.
- */
-
-void case_c(char our_char)
-{
-	_our_write(our_char);
-}
-
-/**
  * case_s - writes the character c to stdout
  * @arguments: Lol
  * Return: On success 1.
@@ -57,5 +46,5 @@ int case_s(void *arguments)
 	{
 		_our_write(((char *)arguments)[strcount]);
 	}
-	return (strcount++);
+	return (strcount);
 }
