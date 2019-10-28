@@ -6,14 +6,9 @@
 #include <stdio.h>
 #include <stdarg.h>
 
-/**
- * _putchar - writes the character c to stdout
- * @c: The character to print
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
- */
-
+int percent(const char *module, int count);
 int _putchar(char c);
 int _printf(const char *format, ...);
+int switch_task_0(const char *module, int count, void *arguments);
 
 #endif

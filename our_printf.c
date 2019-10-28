@@ -8,10 +8,9 @@
 
 int _printf(const char *format, ...)
 {
-	char ch_type;
 	void *argument = NULL;
 	int count = 0;
-	int inter_count = 0, strcount;
+	char our_char;
 
 	va_list our_list;
 
@@ -25,30 +24,17 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			inter_count = count + 1;
-			ch_type = format[inter_count];
-			argument = va_arg(our_list, void*);
-
-			switch (format[inter_count])
+			if (format[count + 1] == 'c')
 			{
-			case 'c':
-				_putchar(va_arg(our_list, int));
-				break;
-			case 's':
-				for (strcount = 0; ((char*)argument)[strcount] != '\0'; strcount++)
-				{
-					_putchar(((char*)argument)[strcount]);
-				}
-			case '%':
-
-
-			default:
-				break;
+				our_char = va_arg(our_list, int);
+				_putchar(our_char);
+				count++;
 			}
+			argument = va_arg(our_list, void*);
+			count = switch_task_0(format, count, argument);
 		}
 		count++;
 	}
-
 	va_end(our_list);
-	return (count);
+	return (count - 1);
 }
