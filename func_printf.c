@@ -38,7 +38,6 @@ int percent(const char *module, int count)
 		}
 		_our_write('%');
 	}
-
 	return (count + result - 1);
 }
 
@@ -65,7 +64,6 @@ int switch_task_0(const char *module, int count, void *arguments)
 		{
 			_our_write(((char *)argument)[strcount]);
 		}
-		//count++;
 		break;
 	case '%':
 		count = percent((char *)module, count);
@@ -73,7 +71,6 @@ int switch_task_0(const char *module, int count, void *arguments)
 	case 'd':
 		integers = *(int *)module;
 		_our_write(integers + '0');
-		//count++;
 		break;
 
 	default:
@@ -92,6 +89,5 @@ int switch_task_0(const char *module, int count, void *arguments)
 
 int print_numbers()
 {
-	//dsd;
 	return (0);
 }

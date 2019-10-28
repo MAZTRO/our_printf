@@ -30,7 +30,6 @@ int _printf(const char *format, ...)
 				_our_write(our_char);
 				count++;
 			}
-
 			argument = va_arg(our_list, void*);
 			count_total = switch_task_0(format, count, argument);
 			count++;
