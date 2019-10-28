@@ -7,7 +7,7 @@
 #include <stdarg.h>
 
 int percent(const char *module, int count);
-int _putchar(char c);
+int _our_write(char c);
 int _printf(const char *format, ...);
 int switch_task_0(const char *module, int count, void *arguments);
 

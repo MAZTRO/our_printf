@@ -25,7 +25,7 @@ int percent(const char *module, int count)
 	{
 		while (y < (result / 2))
 		{
-			_putchar('%');
+			_our_write('%');
 			y++;
 		}
 	}
@@ -33,10 +33,10 @@ int percent(const char *module, int count)
 	{
 		while (y < (result / 2))
 		{
-			_putchar('%');
+			_our_write('%');
 			y++;
 		}
-		_putchar('%');
+		_our_write('%');
 	}
 
 	return (count + result - 1);
@@ -54,6 +54,7 @@ int switch_task_0(const char *module, int count, void *arguments)
 {
 	void *argument;
 	int strcount;
+	int integers;
 
 	argument = arguments;
 
@@ -62,16 +63,35 @@ int switch_task_0(const char *module, int count, void *arguments)
 	case 's':
 		for (strcount = 0; ((char *)argument)[strcount] != '\0'; strcount++)
 		{
-			_putchar(((char *)argument)[strcount]);
+			_our_write(((char *)argument)[strcount]);
 		}
-		count++;
+		//count++;
 		break;
 	case '%':
 		count = percent((char *)module, count);
+		break;
+	case 'd':
+		integers = *(int *)module;
+		_our_write(integers + '0');
+		//count++;
 		break;
 
 	default:
 		break;
 	}
-	return (count);
+	return (strcount - 1);
+}
+
+/**
+ * print_numbers - writes the character c to stdout
+ * @module: The character to print
+ * @count: Lol
+ * @arguments: Lol
+ * Return: On success 1.
+ */
+
+int print_numbers()
+{
+	//dsd;
+	return (0);
 }

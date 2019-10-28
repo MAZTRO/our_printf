@@ -9,7 +9,7 @@
 int _printf(const char *format, ...)
 {
 	void *argument = NULL;
-	int count = 0;
+	int count = 0, count_total = 0;
 	char our_char;
 
 	va_list our_list;
@@ -20,21 +20,25 @@ int _printf(const char *format, ...)
 	{
 		if (format[count] != '%')
 		{
-			_putchar(format[count]);
+			_our_write(format[count]);
 		}
 		else
 		{
 			if (format[count + 1] == 'c')
 			{
 				our_char = va_arg(our_list, int);
-				_putchar(our_char);
+				_our_write(our_char);
 				count++;
 			}
+
 			argument = va_arg(our_list, void*);
-			count = switch_task_0(format, count, argument);
+			count_total = switch_task_0(format, count, argument);
+			count++;
 		}
+		argument = NULL;
 		count++;
 	}
+
 	va_end(our_list);
-	return (count - 1);
+	return ((count -1) + count_total);
 }
