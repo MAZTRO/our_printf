@@ -11,6 +11,6 @@ int case_c(va_list our_char);
 int case_s(va_list our_str);
 int _our_write(char c);
 int _printf(const char *format, ...);
-int switch_task_0(const char *module, int count, void *arguments);
+int cases_2(va_list our_list, const char *module);
 
 #endif
