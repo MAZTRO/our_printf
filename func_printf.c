@@ -34,17 +34,36 @@ int percent(const char *module)
 
 /**
  * case_s - writes the character c to stdout
- * @arguments: Lol
+ * @our_char: Lol
+ * @count: Lol
  * Return: On success 1.
  */
 
-int case_s(void *arguments)
+int case_c(va_list our_char, int count)
 {
+	char print_char;
+
+	print_char = va_arg(our_char, int);
+	_our_write(print_char);
+	count++;
+	return (count);
+}
+/**
+ * case_s - writes the character c to stdout
+ * @our_str: Lol
+ * Return: On success 1.
+ */
+
+int case_s(va_list our_str)
+{
+	char *argument = NULL;
 	int strcount;
 
-	for (strcount = 0; ((char *)arguments)[strcount] != '\0'; strcount++)
+	argument = va_arg(our_str, char*);
+
+	for (strcount = 0; argument[strcount] != '\0'; strcount++)
 	{
-		_our_write(((char *)arguments)[strcount]);
+		_our_write(argument[strcount]);
 	}
 	return (strcount);
 }

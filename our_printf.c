@@ -8,13 +8,11 @@
 
 int _printf(const char *format, ...)
 {
-	void *argument = NULL;
 	int count = 0;
-	char our_char;
 	va_list our_list;
 
 	va_start(our_list, format);
-	while (*format != '\0')
+	while (*format != '\0' && format != NULL)
 	{
 		if (*format != '%')
 		{
@@ -27,13 +25,10 @@ int _printf(const char *format, ...)
 			switch (*format)
 			{
 			case 'c':
-				our_char = va_arg(our_list, int);
-				_our_write(our_char);
-				count++;
+				count += case_c(our_list, count);
 				break;
 			case 's':
-				argument = va_arg(our_list, void*);
-				count += case_s(argument);
+				count += case_s(our_list);
 				break;
 			case '%':
 				count += percent(format);
@@ -44,6 +39,10 @@ int _printf(const char *format, ...)
 			}
 		}
 		format++;
+	}
+	if (format == NULL)
+	{
+		return (-1);
 	}
 	va_end(our_list);
 	return (count);

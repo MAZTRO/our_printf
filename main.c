@@ -7,68 +7,75 @@
  */
 int main(void)
 {
-    int len = 0;
-    int len2 = 0;
-    char lol[] = "I am a string !";
-    int a = 0;
+ /*   // NULL
+printf(NULL);
+_printf(NULL);
+printf("START OF TEST\n");*/
 
-    a = _printf("hola\n");
-    printf("%d\n\n", a);
-    _printf("hola %c\n", 'H');
-    printf("hola %c\n", 'H');
-    _printf("%c\n", 'O');
-    printf("%c\n", 'O');
-    _printf("hola %s\n", "mundo");
-    printf("hola %s\n", "mundo");
-    _printf("%s\n", "Hola mundo");
-    printf("%s\n", "Hola mundo");
-    _printf("%c%s", 'L', "C y S juntos\n");
-    printf("%c%s", 'L', "C y S juntos\n");
-    _printf("hola %c mundo\n", 'Y');
-    printf("hola %c mundo\n", 'Y');
-    _printf("%e\n");
-    _printf("%c\n");
-    printf("%e\n");
-    printf("%c\n\n");
-    _printf("hola %%\n");
-    printf("hola %%\n");
-    _printf("hola %%%c\n", 'H');
-    printf("hola %%%c\n\n", 'H');
-    _printf("%c %c\n", 'a');
-    _printf("%c         %c\n", 'a', 'b');
-    printf("%c         %c\n", 'a', 'b');
-    _printf("            hola\n");
-    printf("            hola\n");
-    _printf("hola[%c]\n", 'H');
-    printf("hola[%c]\n", 'H');
-    _printf("%%%%%%%s\n", "hola");
-    printf("%%%%%%%s\n", "hola");
-    _printf("");
-    _printf("%a%z%c%%\n", 'H');
-    _printf("NULL \n");
-    _printf("'\0'\n");
-    printf("\n");
-    printf("'\0'\n");
-    _printf("1 + 1\n");
-    _printf("#$%%hola\n");
-    _printf("%%\n");
-    _printf("%");
-    _printf("%%r\n");
-    _printf("hello%%\n");
-    _printf("minehello%\n");
-    _printf("hello%r\n");
-    _printf("mineUnknown:[%r]\n");
-    _printf("mineCharacter:[%c]\n", 'H');
-    printf("Character:[%c]\n", 'H');
-    _printf("Let's try to printf a simple sentence.\n");
-    printf("Let's try to printf a simple sentence.\n");
-    _printf("String:[%s]\n", "I am a string !");
-    printf("String:[%s]\n\n", "I am a string !");
+char c = 'z';
+int alen, elen;
+printf("=====================\n");
+printf("*****CHAR*****\n");
+printf("=====================\n");
+printf("Expected   : %cAAA\n", 'a');
+_printf("Actual     : %cAAA\n", 'a');
+elen = printf("Expected   : %c\n", c);
+alen = _printf("Actual     : %c\n", c);
+printf("Expected   : %i\n", elen);
+printf("Actual     : %i\n", alen);
+elen = printf(NULL);
+//alen = _printf(NULL);
+/*printf("Expected   : %i\n", elen);
+printf("Actual     : %i\n", alen);
+printf("Expected   : %cc\n", 'a');
+_printf("Actual     : %cc\n", 'a');
+printf("Expected   : %yd\n");
+_printf("Actual     : %yd\n");
+printf("Expected   : %c\n", 53);
+_printf("Actual     : %c\n", 53);
+printf("Expected   : %c\n", '\0');
+_printf("Actual     : %c\n", '\0');
+printf("Expected   : %%%c\n", 'y');
+_printf("Actual     : %%%c\n", 'y');*/
 
-    len = _printf("04 - String:[%s]\n", lol);
-    len2 = printf("04 - String:[%s]\n", lol);
-    printf("06 - Len:[%d]\n", len);
-    printf("06 - Len:[%d]\n", len2);
+//strings
+printf("=====================\n");
+printf("*****STRINGS*****\n");
+printf("=====================\n");
+char *str = "hello, world";
+alen = elen = 0;
+printf("Expected   : %s\n", "holberton");
+_printf("Actual     : %s\n", "holberton");
+printf("Expected   : %s$\n", "");
+_printf("Actual     : %s$\n", "");
+elen = printf("Expected   : %s\n", str);
+alen = _printf("Actual     : %s\n", str);
+printf("Expected   : %s$\n", NULL);
+_printf("Actual     : %s$\n", NULL);
+printf("Expected   : %i\n", elen);
+printf("Actual     : %i\n", alen);
+printf("Expected   : %sschool\n", "holberton");
+_printf("Actual     : %sschool\n", "holberton");
+
+//%%
+alen = elen = 0;
+printf("=====================\n");
+printf("*****PERCENT*****\n");
+printf("=====================\n");
+elen = printf("Expected   : %%\n");
+alen = _printf("Actual     : %%\n");
+printf("Expected   : %i\n", alen);
+printf("Actual     : %i\n", elen);
+elen = printf("Expected   : %%%%\n");
+alen = _printf("Actual     : %%%%\n");
+printf("Expected   : %i\n", elen);
+printf("Actual     : %i\n", alen);
+printf("Expected   :");
+printf("%");
+printf("\n");
+printf("Actual     :");
+_printf("%");
+printf("\n");
 
     return (0);
 }
