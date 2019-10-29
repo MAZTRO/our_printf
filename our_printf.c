@@ -11,6 +11,9 @@ int _printf(const char *format, ...)
 	int count = 0;
 	va_list our_list;
 
+	if (format == NULL)
+		return (-1);
+
 	va_start(our_list, format);
 	while (*format != '\0' && format != NULL)
 	{
@@ -39,10 +42,6 @@ int _printf(const char *format, ...)
 			}
 		}
 		format++;
-	}
-	if (format == NULL)
-	{
-		return (-1);
 	}
 	va_end(our_list);
 	return (count);
