@@ -6,17 +6,48 @@
  * On error, -1 is returned, and errno is set appropriately.
  */
 
-int percent(const char *module)
+int percent(const char *module, int count)
 {
-	int count = 0, count_aux = 0;
+	int count_space = 0;
 
-	module--;
-	while (*module == '%' || *module == 32)
+	while (module[count + 1] == 32)
 	{
+		count_space++;
+		module++;
+		if (module != '%' || module != 32)
+		{
+			
+	}
+
+
+	if (*module == '%' && module[count + 1] !=)
+	{
+		_our_write('%');
+		module++;
+	}
+	else if (*module == 32)
+	{
+		
+
+	return (module);
+
+	int count = 0, count_aux = 0;
+	module--;
+		while (*module == '%') || *module[count + 1] == 32)
+	{
+		if (module++ == 32)
+		{
+			module++;
+		}
 		if (*module == '%')
 		{
+			_our_write('%')
 			count++;
+			module++;
 		}
+		else if (*module == 32)
+		{
+			
 		if (count == 2)
 		{
 			_our_write('%');
@@ -27,10 +58,11 @@ int percent(const char *module)
 	}
 	if (count == 1)
 	{
-		return (count_aux);
+		return (count_aux - 1);
 	}
 	return (0);
 }
+*/
 
 /**
  * case_s - writes the character c to stdout
