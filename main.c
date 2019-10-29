@@ -14,18 +14,16 @@ printf("START OF TEST\n");*/
 
 char c = 'z';
 int alen, elen;
-printf("=====================\n");
-printf("*****CHAR*****\n");
-printf("=====================\n");
-printf("Expected   : %cAAA\n", 'a');
+printf("CHAR\n");
+ printf("Expected   : %cAAA\n", 'a');
 _printf("Actual     : %cAAA\n", 'a');
-elen = printf("Expected   : %c\n", c);
+elen =  printf("Expected   : %c\n", c);
 alen = _printf("Actual     : %c\n", c);
 printf("Expected   : %i\n", elen);
 printf("Actual     : %i\n", alen);
-elen = printf(NULL);
+//elen = printf(NULL);
 //alen = _printf(NULL);
-/*printf("Expected   : %i\n", elen);
+printf("Expected   : %i\n", elen);
 printf("Actual     : %i\n", alen);
 printf("Expected   : %cc\n", 'a');
 _printf("Actual     : %cc\n", 'a');
@@ -36,12 +34,10 @@ _printf("Actual     : %c\n", 53);
 printf("Expected   : %c\n", '\0');
 _printf("Actual     : %c\n", '\0');
 printf("Expected   : %%%c\n", 'y');
-_printf("Actual     : %%%c\n", 'y');*/
+_printf("Actual     : %%%c\n\n", 'y');
 
 //strings
-printf("=====================\n");
-printf("*****STRINGS*****\n");
-printf("=====================\n");
+printf("STRINGS\n");
 char *str = "hello, world";
 alen = elen = 0;
 printf("Expected   : %s\n", "holberton");
@@ -55,13 +51,13 @@ _printf("Actual     : %s$\n", NULL);
 printf("Expected   : %i\n", elen);
 printf("Actual     : %i\n", alen);
 printf("Expected   : %sschool\n", "holberton");
-_printf("Actual     : %sschool\n", "holberton");
+_printf("Actual     : %sschool\n\n", "holberton");
 
-//%%
 alen = elen = 0;
-printf("=====================\n");
-printf("*****PERCENT*****\n");
-printf("=====================\n");
+printf("PERCENT\n");
+printf("%%%%            %%%c\n", 'H');
+printf("%%%% %%%    \\       c\n", 'H');
+printf("%%%% %%%           c\n", 'H');
 elen = printf("Expected   : %%\n");
 alen = _printf("Actual     : %%\n");
 printf("Expected   : %i\n", alen);

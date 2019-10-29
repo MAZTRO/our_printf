@@ -58,13 +58,27 @@ int case_c(va_list our_char)
 int case_s(va_list our_str)
 {
 	char *argument = NULL;
-	int strcount;
+	int strcount, x;
+	char our_null[] = "(null)";
 
 	argument = va_arg(our_str, char*);
 
-	for (strcount = 0; argument[strcount] != '\0'; strcount++)
+	if (argument == NULL)
 	{
-		_our_write(argument[strcount]);
+		for (x = 0; x < 6; x++)
+		_our_write(our_null[x]);
+		return (0);
+	}
+	else if (argument == '\0')
+	{
+		return (0);
+	}
+	else
+	{
+		for (strcount = 0; argument[strcount] != '\0'; strcount++)
+		{
+			_our_write(argument[strcount]);
+		}
 	}
 	return (strcount);
 }
