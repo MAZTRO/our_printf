@@ -39,9 +39,10 @@ int percent(const char *module)
  * Return: On success 1.
  */
 
-int case_c(va_list our_char, int count)
+int case_c(va_list our_char)
 {
 	char print_char;
+	int count = 0;
 
 	print_char = va_arg(our_char, int);
 	_our_write(print_char);

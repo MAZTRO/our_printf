@@ -25,7 +25,7 @@ int _printf(const char *format, ...)
 			switch (*format)
 			{
 			case 'c':
-				count += case_c(our_list, count);
+				count += case_c(our_list);
 				break;
 			case 's':
 				count += case_s(our_list);

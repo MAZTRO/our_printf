@@ -7,7 +7,7 @@
 #include <stdarg.h>
 
 int percent(const char *module);
-int case_c(va_list our_char, int count);
+int case_c(va_list our_char);
 int case_s(va_list our_str);
 int _our_write(char c);
 int _printf(const char *format, ...);
