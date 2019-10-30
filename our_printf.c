@@ -26,6 +26,7 @@ int cases_2(va_list our_list, const char *module)
 		case '\0':
 			return (0);
 		default:
+			_our_write('%');
 			return (-1);
 	}
 
@@ -69,10 +70,10 @@ int _printf(const char *format, ...)
 				count++;
 				break;
 			default:
-				count = cases_2(our_list, format);
-				if (count == (-1))
-					format--;
-				count = 0;
+				count_null = cases_2(our_list, format);
+				count += count_null;
+				if (count_null == (-1))
+					--format;
 				break;
 			}
 		}
