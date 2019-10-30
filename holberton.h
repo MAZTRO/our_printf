@@ -13,6 +13,6 @@ int _our_write(char c);
 int _printf(const char *format, ...);
 int cases_2(va_list our_list, const char *module);
 int case_digit(va_list our_digit);
-int recur(unsigned int our_digit, int count);
+int recur(int our_digit);
 
 #endif
