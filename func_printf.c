@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdio.h>
 /**
  * percent - writes the character c to stdout
  * @module: The character to print
@@ -8,62 +9,18 @@
 
 int percent(const char *module, int count)
 {
-	int count_space = 0;
-
-	while (module[count + 1] == 32)
-	{
-		count_space++;
-		module++;
-		if (module != '%' || module != 32)
-		{
-			
-	}
-
-
-	if (*module == '%' && module[count + 1] !=)
+	module--;
+	if (module[count] == module[count + 1])
 	{
 		_our_write('%');
+		count++;
+	}
+	else
+	{
 		module++;
 	}
-	else if (*module == 32)
-	{
-		
-
-	return (module);
-
-	int count = 0, count_aux = 0;
-	module--;
-		while (*module == '%') || *module[count + 1] == 32)
-	{
-		if (module++ == 32)
-		{
-			module++;
-		}
-		if (*module == '%')
-		{
-			_our_write('%')
-			count++;
-			module++;
-		}
-		else if (*module == 32)
-		{
-			
-		if (count == 2)
-		{
-			_our_write('%');
-			count_aux += 1;
-			count = 0;
-		}
-		module++;
-	}
-	if (count == 1)
-	{
-		return (count_aux - 1);
-	}
-	return (0);
+	return (count);
 }
-*/
-
 /**
  * case_s - writes the character c to stdout
  * @our_char: Lol
@@ -113,4 +70,44 @@ int case_s(va_list our_str)
 		}
 	}
 	return (strcount);
+}
+
+/**
+ * recur - Print anything
+ * @format: the string that i have in the input.
+ * Return: Always 0 if the functions works.
+ */
+
+int recur(long long int our_digit, int count)
+{
+	if (our_digit < 0)
+	{
+		_our_write('-');
+		our_digit = -our_digit;
+    }
+
+    if (our_digit / 10)
+		recur(our_digit / 10, count++);
+
+    _our_write(our_digit % 10 + '0');
+	return (count);
+}
+
+/**
+ * case_digit - Print anything
+ * @str the string that i have in the input.
+ * @our_var: the integer to convert.
+ * @base: the base of the number, always 10
+ * Return: the new string.
+*/
+
+int case_digit(va_list our_digit)
+{
+	long long int digit = 0;
+	int count = 0, count_total = 0;
+
+	digit = va_arg(our_digit, long long int);
+	count_total = recur(digit, count);
+
+	return (count_total - 1);
 }

@@ -12,19 +12,24 @@ printf(NULL);
 _printf(NULL);
 printf("START OF TEST\n");*/
 
-char c = 'z';
+//char c = 'z';
 int alen, elen;
+int digit = 3551024;
+/*
 printf("CHAR\n");
- printf("Expected   : %cAAA\n", 'a');
+printf("Expected   : %cAAA\n", 'a');
 _printf("Actual     : %cAAA\n", 'a');
 elen =  printf("Expected   : %c\n", c);
 alen = _printf("Actual     : %c\n", c);
-printf("Expected   : %i\n", elen);
-printf("Actual     : %i\n", alen);
+printf("- Expected   : %i\n", elen);
+_printf("- Actual     : %i\n", alen);
+
+_printf("- Actual     : %d\n", digit);
+
 //elen = printf(NULL);
 //alen = _printf(NULL);
-printf("Expected   : %i\n", elen);
-printf("Actual     : %i\n", alen);
+//printf("---- Expected   : %d\n", elen);
+//_printf("---- Actual     : %d\n", alen);
 printf("Expected   : %cc\n", 'a');
 _printf("Actual     : %cc\n", 'a');
 printf("Expected   : %yd\n");
@@ -48,28 +53,27 @@ elen = printf("Expected   : %s\n", str);
 alen = _printf("Actual     : %s\n", str);
 printf("Expected   : %s$\n", NULL);
 _printf("Actual     : %s$\n", NULL);
-printf("Expected   : %i\n", elen);
-printf("Actual     : %i\n", alen);
+printf("----- Expected   : %i\n", elen);
+_printf("----- Actual     : %i\n", alen);
 printf("Expected   : %sschool\n", "holberton");
 _printf("Actual     : %sschool\n\n", "holberton");
 
 alen = elen = 0;
-printf("PERCENT\n");
-printf("%%%%            %%%c\n", 'H');
-printf("%%%% %%%    \\       c\n", 'H');
-printf("%%%% %%%           c\n", 'H');
+printf("PERCENT\n");*/
+_printf("- Actual     : %d\n\n", digit);
 elen = printf("Expected   : %%\n");
 alen = _printf("Actual     : %%\n");
-printf("Expected   : %i\n", alen);
-printf("Actual     : %i\n", elen);
+printf("Expected   : %i\n", elen);
+_printf("Actual     : %i\n", alen);
 elen = printf("Expected   : %%%%\n");
 alen = _printf("Actual     : %%%%\n");
 printf("Expected   : %i\n", elen);
-printf("Actual     : %i\n", alen);
+_printf("Actual     : %i\n", alen);
+
 printf("Expected   :");
 printf("%");
 printf("\n");
-printf("Actual     :");
+_printf("Actual     :");
 _printf("%");
 printf("\n");
 
