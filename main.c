@@ -8,7 +8,7 @@
  */
 int main(void)
 {
-
+int number = -101024, x = 0;
 char c = 'z';
 int alen, elen;
 printf("=====================\n");
@@ -61,17 +61,15 @@ printf("*****PERCENT*****\n");
 printf("=====================\n");
 elen = printf("Expected   : %%\n");
 alen = _printf("Actual     : %%\n");
-printf("Expected   : %i\n", alen);
-printf("Actual     : %i\n", elen);
+printf("Expected   : %i\n", elen);
+_printf("Actual     : %i\n", alen);
 elen = printf("Expected   : %%%%\n");
 alen = _printf("Actual     : %%%%\n");
 printf("Expected   : %i\n", elen);
-printf("Actual     : %i\n", alen);
-printf("Expected   :");
-printf("%");
-printf("\n");
-printf("Actual     :");
-_printf("%");
+_printf("Actual     : %i\n", alen);
+
+x = _printf("%d\n", number);
+_printf("%d\n", x);
 printf("\n");
 
 return (0);
