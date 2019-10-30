@@ -1,27 +1,6 @@
 #include "holberton.h"
 #include <stdio.h>
-/**
- * percent - writes the character c to stdout
- * @module: The character to print
- * @count: the counter
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
- */
 
-int percent(const char *module, int count)
-{
-	module--;
-	if (module[count] == module[count + 1])
-	{
-		_our_write('%');
-		count++;
-	}
-	else
-	{
-		module++;
-	}
-	return (count);
-}
 /**
  * case_c - writes the character c to stdout
  * @our_char: Lol
