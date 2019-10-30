@@ -87,6 +87,7 @@ int recur(int our_digit)
 	{
 		_our_write('-');
 		our_digit = -our_digit;
+		count = 1;
 	}
 	x = our_digit;
 
@@ -120,5 +121,5 @@ int case_digit(va_list our_digit)
 	digit = va_arg(our_digit, int);
 	count_total = recur(digit);
 
-	return (count_total -1);
+	return (count_total - 1);
 }

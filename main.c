@@ -8,7 +8,7 @@
  */
 int main(void)
 {
-int number = -1024, x = 0;
+int number = -101024, x = 0;
 char c = 'z';
 int alen, elen;
 printf("=====================\n");
