@@ -99,5 +99,5 @@ int case_digit(va_list our_digit)
 	digit = va_arg(our_digit, int);
 	count_total = recur(digit);
 
-	return (count_total - 1);
+	return (count_total);
 }
