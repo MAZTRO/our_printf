@@ -1,2 +1,63 @@
-man page
+.TH _printf  "29 10 2019" "version 1.0"
+.SH NAME
+_printf - Prints data and format
+.SH SYNOPSIS
+.B #include "holberton.h"
+	#include <stdlib.h>
+	#include <stdarg.h>
 
+.B int _printf(const char *[FORMAT], ...);
+
+.SH DESCRIPTION
+.B The functions in the _printf() produce output according to its format, print ARGUMENT(s) according to FORMAT:
+
+.B FORMAT controls the output. interpreted sequences are:
+
+%d	Prints a decimal number hosted in the arguments.
+
+%i	Prints a integer number hosted in the arguments.
+
+%c	Prints a character hosted in the arguments.
+
+%s	Prints a string hosted in the arguments.
+
+%%	a single %.
+
+.SH RETURN VALUE
+Upon successful return, _printf() will return the number of characters printed excluding the null byte presented at the end. If an output error is encountered, a negative value is returned.
+
+.SH CONVERSION SPECIFIER
+A character that specifies the type of conversion to be applied. The conversion specifier and their meanings are:
+
+.TP
+\fBd\fR, \fBi\fR
+The int argument is converted to signed decimal notation. The precision, if any, gives the minimum number of digits that must appear.
+
+.TP
+\fBc\fR
+If no l modifier is present, the int argument is converted to an unsigned char, and the resulting character is written.
+.TP
+
+\fBs\fR
+If no l modifier is present: The const char * argument is expected to be a pointer to an array of character type (pointer to a string). Characters from the array are written up to (but not including) a terminating null byte ('\0').
+
+.TP
+\fB%\fR
+A '%' is written. No argument is converted. The complete conversion specification is '%%'.
+
+.SH SEE ALSO
+.B printf(3)
+
+.SH BUGS
+None found at the moment.
+
+.SH EXAMPLE
+To print the string "Print a string":
+
+#include "holberton.h"
+
+ _printf ("%s", "Print a string");
+
+
+.SH AUTHORS
+Jonatan Ricardo Mazo (1150@holbertonschool.com), Tomás Mejía (1223@holbertonschool.com).s 1.0"
