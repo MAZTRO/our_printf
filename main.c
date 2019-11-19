@@ -1,47 +1,8 @@
 #include "holberton.h"
 #include <stdio.h>
 
-/**
- * main - Entry point
- *
- * Return: Always 0
- */
-
 int main(void)
 {
-	int len, len2;
-
-	len = _printf("There is %i bytes in %i KB\n", 1024, 1);
-	len2 = printf("There is %i bytes in %i KB\n", 1024, 1);
-	fflush(stdout);
-	if (len != len2)
-	{
-		printf("Lengths differ.\n");
-		fflush(stdout);
-		return (1);
-	}
-	return (0);
-}
-/*
-int main(void)
-{
-	int len, len2;
-
-	len = _printf("iddi%diddiiddi\n", 1024);
-	len2 = printf("iddi%diddiiddi\n", 1024);
-	_printf("%d\n", len2);
-	printf("%d\n", len);
-	fflush(stdout);
-	if (len != len2)
-	{
-		printf("Lengths differ.\n");
-		fflush(stdout);
-		return (1);
-	}
-	return (0);
-}
-*/
-/*
 
 int number = -101024, x = 0;
 char c = 'z';
@@ -111,7 +72,3 @@ printf("\n");
 
 return (0);
 }
-
-*/
-
-
